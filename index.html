@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manoj Chauhan — Senior PHP / Laravel Developer portfolio. 5+ years of experience in Laravel, PHP, REST APIs, eCommerce, marketplaces and scalable backend systems.">
+  <title>Manoj Chauhan | Senior PHP / Laravel Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#08111f; --panel:#0e1a2b; --panel2:#111f33; --text:#eef5ff; --muted:#9eb0c8;
+      --line:rgba(255,255,255,.09); --accent:#65d6ff; --accent2:#8b7cff; --white:#fff;
+      --shadow:0 20px 60px rgba(0,0,0,.25); --radius:20px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:
+      radial-gradient(circle at 80% 5%,rgba(101,214,255,.12),transparent 28%),
+      radial-gradient(circle at 15% 30%,rgba(139,124,255,.10),transparent 25%),var(--bg);
+      color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+    header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,17,31,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:"Space Grotesk";font-size:22px;font-weight:700;letter-spacing:-.5px}
+    .logo span{color:var(--accent)}
+    .navlinks{display:flex;gap:26px;color:var(--muted);font-size:14px;font-weight:600}
+    .navlinks a:hover{color:var(--white)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:var(--white);padding:8px 10px;border-radius:10px}
+    .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:70px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--accent);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    h1{font-family:"Space Grotesk";font-size:clamp(46px,7vw,82px);line-height:.98;letter-spacing:-3px;margin:18px 0}
+    h1 span{background:linear-gradient(90deg,var(--accent),#b5aaff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{font-size:18px;color:var(--muted);max-width:690px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:var(--white);color:#07101e}.btn:hover{transform:translateY(-2px)}
+    .btn.secondary{background:rgba(255,255,255,.03)}
+    .hero-card{position:relative}.avatar{width:270px;height:270px;border-radius:50%;margin:auto;display:grid;place-items:center;
+      background:linear-gradient(145deg,rgba(101,214,255,.18),rgba(139,124,255,.16));border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow)}
+    .avatar-inner{width:210px;height:210px;border-radius:50%;display:grid;place-items:center;background:#101e31;border:1px solid var(--line);
+      font-family:"Space Grotesk";font-size:66px;font-weight:700;color:var(--accent)}
+    .floating{position:absolute;right:0;bottom:8px;background:var(--panel);border:1px solid var(--line);padding:14px 16px;border-radius:15px;box-shadow:var(--shadow);font-size:13px}
+    section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:35px}
+    .kicker{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px}
+    h2{font-family:"Space Grotesk";font-size:40px;letter-spacing:-1.5px;margin:7px 0 0}
+    .section-head p{color:var(--muted);max-width:470px;margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 12px 40px rgba(0,0,0,.08)}
+    .card p{color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .stat{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:18px}.stat strong{font-size:25px;font-family:"Space Grotesk"}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}.tag{padding:9px 13px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;font-size:13px;color:#c9d8eb}
+    .timeline{position:relative;margin-left:10px;padding-left:32px;border-left:1px solid var(--line)}.job{position:relative;margin-bottom:34px}.job:before{content:"";position:absolute;left:-38px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg),0 0 20px rgba(101,214,255,.5)}
+    .job-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.job h3{margin:0;font-size:18px}.date{color:var(--accent);font-size:13px;font-weight:700}.company{color:#c8d6e8;font-weight:600;margin:4px 0 9px}.job ul{margin:0;padding-left:18px;color:var(--muted)}.job li{margin:5px 0}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{min-height:205px;display:flex;flex-direction:column;justify-content:space-between}
+    .project .num{color:var(--accent);font-weight:800;font-size:12px}.project h3{font-family:"Space Grotesk";font-size:21px;margin:10px 0 7px}.project p{color:var(--muted);font-size:14px;margin:0}.project a{display:inline-flex;margin-top:18px;color:var(--accent);font-size:13px;font-weight:700}
+    .project.featured{grid-column:span 2;background:linear-gradient(135deg,rgba(101,214,255,.10),rgba(139,124,255,.09))}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:22px}.contact-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}.icon{width:38px;height:38px;border-radius:11px;background:rgba(101,214,255,.08);display:grid;place-items:center;color:var(--accent)}
+    .contact-item small{display:block;color:var(--muted)}footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}
+    .edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu h3{margin:0 0 4px}.edu p{color:var(--muted);margin:0}
+    @media(max-width:800px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:#091322;padding:20px;flex-direction:column;gap:16px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}
+      .hero-grid,.about-grid,.contact,.edu{grid-template-columns:1fr}.hero{padding-top:120px}.hero-card{order:-1}.avatar{width:210px;height:210px}.avatar-inner{width:165px;height:165px;font-size:48px}
+      .project-grid{grid-template-columns:1fr}.project.featured{grid-column:auto}.stats{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:12px}}
+    @media(max-width:460px){h1{font-size:48px}.stats{grid-template-columns:1fr}.buttons .btn{width:100%}}
+
+
+    .avatar {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    padding: 10px;
+    overflow: hidden;
+    background: #101e31;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: var(--shadow);
+}
+
+.avatar-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+  </style>
+</head>
+<body>
+<header><div class="container"><nav>
+  <a class="logo" href="#home">Manoj Chauhan<span>.</span></a>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </div>
+</nav></div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+  <div>
+    <div class="eyebrow"><i class="dot"></i> Available for new opportunities</div>
+    <h1>Senior PHP /<br><span>Laravel Developer</span></h1>
+    <p>5+ years of experience building scalable web applications, REST APIs, multi-vendor eCommerce platforms, marketplaces, booking systems and real-time applications.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">View My Work</a>
+      <a class="btn secondary" href="mailto:manojchauhan1328@gmail.com">Let's Talk</a>
+      <a class="btn secondary" href="tel:+919013409547">Call Me</a>
+    </div>
+  </div>
+  <div class="hero-card"><div class="avatar"><div class="avatar-inner"><img  src="profile.png"> </div></div><div class="floating">PHP 8 · Laravel 7–12 · MySQL</div></div>
+</div></section>
+
+<section id="about"><div class="container">
+  <div class="section-head"><div><div class="kicker">01 — About</div><h2>Backend-focused. Product-minded.</h2></div><p>I build reliable backend systems and turn business requirements into maintainable technical solutions.</p></div>
+  <div class="about-grid">
+    <div class="card"><p>I'm Manoj Chauhan, a Senior PHP / Laravel Developer based in Delhi, India. My experience covers backend architecture, API development, database optimization, authentication, payment integrations, cloud deployment and production support.</p><br><p>I have worked across eCommerce, marketplaces, dating, taxi booking, healthcare, education, fitness, corporate and service-based applications.</p>
+      <div class="stats"><div class="stat"><strong>5+</strong><span>Years Experience</span></div><div class="stat"><strong>15+</strong><span>Portfolio Projects</span></div><div class="stat"><strong>1M+</strong><span>Products on Afiato</span></div></div>
+    </div>
+    <div class="card" id="skills"><div class="kicker">Core stack</div><h3>Technical Skills</h3><div class="skills" style="margin-top:15px">
+      <span class="tag">PHP 7/8</span><span class="tag">Laravel 7–12</span><span class="tag">CodeIgniter</span><span class="tag">REST APIs</span><span class="tag">JWT</span><span class="tag">OAuth</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Eloquent ORM</span><span class="tag">Redis</span><span class="tag">Queues</span><span class="tag">WebSockets</span><span class="tag">Docker</span><span class="tag">AWS S3</span><span class="tag">CloudFront</span><span class="tag">Stripe</span><span class="tag">Braintree</span><span class="tag">PayPal</span><span class="tag">Git</span><span class="tag">CI/CD</span><span class="tag">JavaScript</span><span class="tag">jQuery</span><span class="tag">AJAX</span><span class="tag">Bootstrap</span><span class="tag">Node.js (Basic)</span>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="container">
+  <div class="section-head"><div><div class="kicker">02 — Experience</div><h2>Professional journey</h2></div><p>Experience across production applications, APIs, eCommerce and business platforms.</p></div>
+  <div class="timeline">
+    <div class="job"><div class="job-top"><h3>Senior PHP Developer</h3><span class="date">Oct 2024 — Sep 2026</span></div><div class="company">Fluper Limited</div><ul><li>Develop scalable Laravel applications and REST APIs for business-critical platforms.</li><li>Build multi-vendor eCommerce workflows for Admin, Seller, Affiliate and Customer roles.</li><li>Implement wallet, loyalty, referral, OTP and payment-gateway modules.</li><li>Optimize MySQL queries, caching and application performance for large datasets.</li></ul></div>
+    <div class="job"><div class="job-top"><h3>Senior PHP Developer</h3><span class="date">Feb 2024 — Sep 2024</span></div><div class="company">Maxtra Technologies</div><ul><li>Delivered Laravel backend modules and client-specific web solutions.</li><li>Converted business requirements into scalable backend implementations and APIs.</li></ul></div>
+    <div class="job"><div class="job-top"><h3>PHP Developer</h3><span class="date">Sep 2023 — Feb 2024</span></div><div class="company">ZonSource IT Solutions</div><ul><li>Developed REST APIs and maintained production PHP applications.</li><li>Handled backend modules, database operations and issue resolution.</li></ul></div>
+    <div class="job"><div class="job-top"><h3>PHP Developer</h3><span class="date">Oct 2022 — Sep 2023</span></div><div class="company">Elite Mindz</div><ul><li>Designed and developed backend modules for web applications.</li><li>Optimized database operations and supported performance improvements.</li></ul></div>
+    <div class="job"><div class="job-top"><h3>Jr. PHP Developer</h3><span class="date">Aug 2018 — Feb 2020</span></div><div class="company">Pitili Digital Solutions</div><ul><li>Developed PHP/Laravel websites and backend functionality.</li><li>Resolved hosting, deployment and production issues.</li></ul></div>
+    <div class="job"><div class="job-top"><h3>Frontend Designer & Jr. PHP Developer</h3><span class="date">Sep 2017 — Jun 2018</span></div><div class="company">Webrobot</div><ul><li>Built responsive websites using HTML, CSS, Bootstrap, JavaScript and PHP.</li><li>Supported website maintenance and frontend/backend integration.</li></ul></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="container">
+  <div class="section-head"><div><div class="kicker">03 — Selected Work</div><h2>Projects that showcase my work</h2></div><p>A selection of applications and websites across commerce, marketplaces, mobility and business domains.</p></div>
+  <div class="project-grid">
+    <article class="card project featured"><div><div class="num">01 · ECOMMERCE</div><h3>Afiato</h3><p>Large-scale multi-vendor eCommerce platform with 1M+ products, seller dashboard, wallet, loyalty points, coupons, APIs and payment integrations. Focused on Laravel backend, database optimization, caching and scalable API architecture.</p></div><a href="https://afiato.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">02 · MARKETPLACE</div><h3>Desynat</h3><p>Multi-vendor marketplace with seller management, affiliate functionality, wallet and eCommerce workflows.</p></div><a href="https://desynat.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">03 · DATING</div><h3>Haeyo Dating</h3><p>Subscription-based dating platform with profiles, membership workflows and real-time communication features.</p></div><a href="https://haeyodating.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">04 · ELDERCARE</div><h3>Vesta Eldercare</h3><p>Eldercare-focused website/platform with service presentation, responsive UI and content integration.</p></div><a href="https://www.vestaeldercare.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">05 · EDUCATION</div><h3>EduPartner</h3><p>Education-focused web platform supporting institutional and service information with responsive experiences.</p></div><a href="https://www.edupartner.co.in/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">06 · CORPORATE</div><h3>RK Container Line</h3><p>Corporate logistics/container-line website with responsive pages and business/service information.</p></div><a href="https://rkcontainerline.co.in/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">07 · SCIENTIFIC</div><h3>Rehsiff Scientific</h3><p>Scientific/business website with product and service presentation and responsive web implementation.</p></div><a href="http://rehsiffscientific.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">08 · TECHNOLOGY</div><h3>GizmoGyan</h3><p>Technology-focused website with responsive frontend and content-driven web functionality.</p></div><a href="http://gizmogyan.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">09 · FASHION</div><h3>Douge Couture</h3><p>Fashion/commerce-oriented website with product presentation and responsive customer-facing interface.</p></div><a href="https://dougecouture.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">10 · FITNESS</div><h3>UFIT Academy</h3><p>Fitness/academy website with course or service presentation and responsive implementation.</p></div><a href="https://ufitacademy.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">11 · ARTS</div><h3>DRIFT Theatre</h3><p>Theatre/arts organization website with responsive pages and content presentation.</p></div><a href="https://driftheatre.org/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">12 · AUTOMOTIVE</div><h3>CartsWheels</h3><p>Automotive/business website with responsive customer-facing pages and service/product presentation.</p></div><a href="https://www.cartswheels.in/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">13 · ORGANIZATION</div><h3>Ubuntu Botho Life</h3><p>Responsive web platform with service-focused content and backend/content integration.</p></div><a href="https://www.ubuntubotholife.co.za/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">14 · BUSINESS</div><h3>NextOffice</h3><p>Office/business website with responsive layout and service/product information.</p></div><a href="https://www.nextoffice.in/" target="_blank" rel="noopener">Visit project ↗</a></article>
+    <article class="card project"><div><div class="num">15 · BUSINESS</div><h3>RN VIP</h3><p>Business/service website with responsive pages and customer-facing content.</p></div><a href="https://www.rnvip.com/" target="_blank" rel="noopener">Visit project ↗</a></article>
+  </div>
+</div></section>
+
+<section id="education"><div class="container">
+  <div class="section-head"><div><div class="kicker">04 — Education</div><h2>Education & qualifications</h2></div></div>
+  <div class="edu">
+    <div class="card"><h3>Bachelor of Computer Applications (BCA)</h3><p>Sikkim Manipal University · 2016</p></div>
+    <div class="card"><h3>Class XII</h3><p>H.B.S.E. · 2012 · 63%</p></div>
+    <div class="card"><h3>Class X</h3><p>C.B.S.E. · 2010 · 65%</p></div>
+    <div class="card"><h3>Technical Certifications</h3><p>Web Designing — NIIT · PHP Development — Sithub · Hardware & Networking</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="container">
+  <div class="section-head"><div><div class="kicker">05 — Contact</div><h2>Let's build something useful.</h2></div><p>Looking for a Senior PHP / Laravel opportunity or a backend development project? Get in touch.</p></div>
+  <div class="contact">
+    <div class="card">
+      <div class="contact-item"><div class="icon">✉</div><div><small>Email</small><a href="mailto:manojchauhan1328@gmail.com">manojchauhan1328@gmail.com</a></div></div>
+      <div class="contact-item"><div class="icon">☎</div><div><small>Phone</small><a href="tel:+919013409547">+91 90134 09547</a></div></div>
+      <div class="contact-item"><div class="icon">⌖</div><div><small>Location</small><span>Delhi, India</span></div></div>
+    </div>
+    <div class="card"><div class="kicker">What I bring</div><h3>Strong backend engineering with business awareness.</h3><p style="margin-top:12px">Laravel architecture, REST APIs, authentication, eCommerce workflows, payment integrations, database optimization, Redis, queues, Docker, AWS and production problem solving.</p><div class="buttons"><a class="btn primary" href="mailto:manojchauhan1328@gmail.com?subject=PHP%20Developer%20Opportunity">Email Me</a><a class="btn secondary" href="#home">Back to top ↑</a></div></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="container">© <span id="year"></span> Manoj Chauhan · Senior PHP / Laravel Developer · Delhi, India</div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open')));
+</script>
+</body>
+</html>
